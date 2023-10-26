@@ -19,7 +19,6 @@ sys.path.append('/Users/raquelgonzalezarmas/Desktop/PhD_Wageningen/1er-paper/mod
 sys.path.append('/Users/raquelgonzalezarmas/Desktop/PhD_Wageningen/Code/Numerical-Methods/')
 from Numerical_Differentiation import get_secondOrder_derivative
 sys.path.append('/Users/raquelgonzalezarmas/Desktop/PhD_Wageningen/1er-paper/models/Control_simulation/')
-import sensitivity_control_cases as cases
 
 
 # Needed constant and functions
@@ -244,23 +243,23 @@ def calculate_tendencies(r1):
     tendencies_all[:,35] = dAnldT
     # Calculus of tendencies_all of glc and glw
     ## PAR
-    dglcdAg = a1/(co2abs-co2comp)/(1+Ds/Dstar)
-    dglcdPAR = dglcdAg*dAgdPAR
+    dglcdAnl = a1/(co2abs-co2comp)/(1+Ds/Dstar)
+    dglcdPAR = dglcdAnl*dAnldPAR
     dglwdPAR = mu*dglcdPAR
     ## Cs
-    dglcdCs_Ag = -(glc-gminc)/(co2abs-co2comp)
-    dglcdCs = dglcdCs_Ag + dglcdAg*dAgdCs
+    dglcdCs_Anl = -(glc-gminc)/(co2abs-co2comp)
+    dglcdCs = dglcdCs_Anl + dglcdAnl*dAnldCs
     dglwdCs = mu*dglcdCs
     ## Ds at constant T
-    dglcdDs_AgT = -(glc-gminc)/(Dstar+Ds)
-    dglcdDs_T = dglcdAg * dAgdDs_T+dglcdDs_AgT
+    dglcdDs_AnlT = -(glc-gminc)/(Dstar+Ds)
+    dglcdDs_T = dglcdAnl * dAnldDs_T+dglcdDs_AnlT
     dglwdDs_T = mu*dglcdDs_T
     ## T at constant Ds
     dglcdco2comp_AgT = (glc-gminc)/(co2abs-co2comp)
-    dglcdT_Ds = dglcdAg*dAgdT_Ds + dglcdco2comp_AgT*dco2compdT
+    dglcdT_Ds = dglcdAnl*dAnldT_Ds + dglcdco2comp_AgT*dco2compdT
     dglwdT_Ds = mu*dglcdT_Ds
     ## w2
-    dglcdw2 = dglcdAg*dAgdw2
+    dglcdw2 = dglcdAnl*dAnldw2
     dglwdw2 = mu*dglcdw2
     ## e
     dglcde = - dglcdDs_T
