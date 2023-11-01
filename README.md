@@ -1,6 +1,6 @@
 Hi all!
 
-This folder contains the Python scripts used to produce the research and create the figures of the manuscript titled "On the impact of canopy environmental drivers on the diurnal and sub-diurnal dynamics of the leaf and canopy water and carbon dioxide exchange" submitted to Biogeoscience scientific journal the X of September 2023.
+This folder contains the Python scripts used to produce the research and create the figures of the submitted manuscript titled "On the impact of canopy environmental drivers on the diurnal and sub-diurnal dynamics of the leaf and canopy water and carbon dioxide exchange" submitted to Biogeoscience scientific journal the X of September 2023.
 
 In the Folder "Creating_figures", you can find the Python scripts that were used to create all the figures of the manuscript.
 
